@@ -10,19 +10,16 @@
 // })
 
 
-function Count(text) {
+const CountUniqueWords = txt => new Set(txt.toLowerCase().match(/\w+/g)).size;
+//A Set is a collection of unique values. Each value may occur only once in a Set.
+// \w find characters and + continue until find non-alphanumeric character
 
-    var wordText = text.match(/(\w+)/g); // \w find characters and + continue until find non-alphanumeric character
-    var wordCount = wordText.length;
-    var words = wordText.values();
+const text = "sa ma sa  MA sa sa Sa";
 
-
-    console.log(wordCount)
-
-    for (let elements of words) {
-        console.log(elements);
-    }
+console.log(CountUniqueWords(text))
 
 
+var words = new Set(text.toLowerCase().match(/\w+/g).values())
+for (let elements of words) {
+    console.log(elements);
 }
-Count("Hello Maria fvbxc fbc f%gfd gh ")
