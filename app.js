@@ -10,16 +10,27 @@
 // })
 
 
+const text = "salam man maryam hastam. salam. khjoobin? maryam salam";
 const CountUniqueWords = txt => new Set(txt.toLowerCase().match(/\w+/g)).size;
 //A Set is a collection of unique values. Each value may occur only once in a Set.
 // \w find characters and + continue until find non-alphanumeric character
 
-const text = "sa ma sa  MA sa sa Sa";
-
 console.log(CountUniqueWords(text))
 
 
-var words = new Set(text.toLowerCase().match(/\w+/g).values())
-for (let elements of words) {
-    console.log(elements);
+var words = text.toLowerCase().match(/\w+/g).values();
+var items = {};
+
+for (let item of words) {
+    if(isNaN(items[item])){
+        items[item] = 0;
+    }
+    items[item] += 1;
+    console.log(items)
+}
+
+items = Object.keys(items).sort().reduce((r, k) => (r[k] = items[k], r), {});
+
+for (const [key, value] of Object.entries(items)) {
+    console.log(key, value);
 }
