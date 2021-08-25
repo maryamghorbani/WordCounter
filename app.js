@@ -26,7 +26,6 @@ for (let item of words) {
         items[item] = 0;
     }
     items[item] += 1;
-    console.log(items)
 }
 
 items = Object.keys(items).sort().reduce((r, k) => (r[k] = items[k], r), {});
