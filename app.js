@@ -12,10 +12,17 @@
 
 function Count(text) {
 
-        var wordCount = text.match(/(\w+)/g).length;
-        // \w find characters and + continue until find non-alphanumeric character
+    var wordText = text.match(/(\w+)/g); // \w find characters and + continue until find non-alphanumeric character
+    var wordCount = wordText.length;
+    var words = wordText.values();
 
-        console.log(wordCount)
+
+    console.log(wordCount)
+
+    for (let elements of words) {
+        console.log(elements);
+    }
+
 
 }
-Count("Hev % 1 3 cb&cv llo Maria dslkfm sdfjl lsfj m ")
+Count("Hello Maria fvbxc fbc f%gfd gh ")
