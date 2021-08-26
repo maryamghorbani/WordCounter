@@ -4,6 +4,12 @@
   },
   "scripts": {
     "test": "jest --watchAll --no-cache"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "setupFilesAfterEnv": [
+      "./test/app.test.js"
+    ]
   }
 }
 
