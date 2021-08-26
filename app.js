@@ -20,15 +20,17 @@ console.log(CountUniqueWords(text))
 
 var words = text.toLowerCase().match(/\w+/g).values();
 var items = {};
-
+//define a dictionary
 for (let item of words) {
     if(isNaN(items[item])){
         items[item] = 0;
     }
     items[item] += 1;
 }
+// count unique words
 
 items = Object.keys(items).sort().reduce((r, k) => (r[k] = items[k], r), {});
+// sort words
 
 for (const [key, value] of Object.entries(items)) {
     console.log(key, value);
