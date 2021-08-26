@@ -45,4 +45,4 @@ fs.readFile('file.txt', 'utf8', function(err, text) {
 });
 
 
-// const text = "salam man maryam hastam. salam. khjoobin? maryam salam";
+
