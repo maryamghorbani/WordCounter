@@ -1,0 +1,3 @@
+Cloud migration is a top priority for most organisations today. The drivers for the shift may vary, ranging from improved scalability and IT effectiveness, to providing better customer experiences and speeding up deployment.
+But, no matter how straightforward your ecosystem is or how little infrastructure is being moved, cloud migration is a fairly complicated process. Migrations often wind up going over budget or taking much longer than expected, or they fail completely, resulting in wasted time and expense. Which is why a systematic and document plan is crucial.
+In this post, we've boiled down the cloud migration process to nine key steps to give you a head start on your journey to the cloud.
