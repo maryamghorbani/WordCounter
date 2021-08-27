@@ -8,7 +8,7 @@
   "jest": {
     "testEnvironment": "node",
     "setupFilesAfterEnv": [
-      "./test/app.test.js"
+      "./app.test.js"
     ]
   }
 }
