@@ -47,15 +47,17 @@ function CountWord(text) {
 
     // count unique words
 
-
     function SortWords() {
         items = Object.keys(items).sort().reduce((r, k) => (r[k] = items[k], r), {});
         // sort words
     }
 
     for (const [key, value] of Object.entries(items)) {
-        console.log(key, value);
+
+        console.log(key,value);
     }
+    return items
+
 }
 
 CountWord(text);

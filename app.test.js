@@ -1,10 +1,12 @@
 const { CountUniqueWords , CountWord}  = require('./app');
 
+var input = "Hello world, heLlo"
+
 describe("Test word counting", () => {
     test('return 2 when input is hello world', () => {
         expect(CountUniqueWords("hello world")).toBe(2);
     });
-    test('return hello world, helLo when input is hello:2 world:1', () => {
-        expect(CountWord("hello world, helLo")).toBe("hello 2\n" + "world 1\n");
+    test('return {"hello": 2, "world": 1}, helLo when input is Hello world, heLlo', () => {
+        expect(CountWord(input)).toStrictEqual({"hello": 2, "world": 1});
     });
 });
