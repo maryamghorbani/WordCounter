@@ -14,14 +14,15 @@
 var fs = require('fs');
 //allows to work with the file system on your computer.
 
-fs.readFile('file.txt', 'utf8', function(err, text) {
 
+try {
+    var data = fs.readFileSync('file.txt', 'utf8')
 
+} catch (err) {
+    console.error(err)
+}
 
-
-});
-
-var text = "hello world, heLLo, Hello"
+var text = data;
 function CountUniqueWords(txt) {
     const Count = new Set(txt.toLowerCase().match(/\w+/g)).size;
     return Count;
