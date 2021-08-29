@@ -27,12 +27,9 @@ function readFile(filePath) {
 function splitWords(content) {
     return content.toLowerCase().match(/\w+/g).values();
 }
-
-//A Set is a collection of unique values. Each value may occur only once in a Set.
 // \w find characters and + continue until find non-alphanumeric character
 
 function countUniqueWord(listOfWord) {
-    //define a dictionary
     const items = {};
     for (let item of listOfWord) {
         if (isNaN(items[item])) {
@@ -48,7 +45,6 @@ function sortAlphabeticCountWord(collectionOfWord) {
 }
 
 function printWords(collectionOfWord) {
-    // sort words
     console.log('total items: ' + Object.keys(collectionOfWord).length);
     for (const [key, value] of Object.entries(collectionOfWord)) {
 
