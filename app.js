@@ -27,6 +27,7 @@ function readFile(filePath) {
 function splitWords(content) {
     return content.toLowerCase().match(/\w+/g).values();
 }
+
 //A Set is a collection of unique values. Each value may occur only once in a Set.
 // \w find characters and + continue until find non-alphanumeric character
 
@@ -39,7 +40,7 @@ function countUniqueWord(listOfWord) {
         }
         items[item] += 1;
     }
-    return items
+    return items;
 }
 
 function sortAlphabeticCountWord(collectionOfWord) {
@@ -63,4 +64,4 @@ wordsCount = sortAlphabeticCountWord(wordsCount);
 printWords(wordsCount);
 
 
-
+module.exports = { splitWords , countUniqueWord , sortAlphabeticCountWord };

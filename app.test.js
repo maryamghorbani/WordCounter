@@ -1,9 +1,19 @@
-const { CountWord }  = require('./app');
+const { splitWords , countUniqueWord , sortAlphabeticCountWord }  = require('./app');
 
-var input = "Hello world, heLlo, aha"
+const content = "Hello world, heLlo, aha";
+const wordlist = {};
+const wordcollection = { hello: 3, maryam: 1, aha: 1 };
+
+
 
 describe("Test word counting", () => {
-    test('return {"hello": 2, "world": 1}, helLo when input is Hello world, heLlo', () => {
-        expect(CountWord(input)).toStrictEqual({"hello": 2, "world": 1, "aha":1});
+    test("Split words", () => {
+        expect(splitWords(content)).toMatchObject({});
+    });
+    test("Countong Unique words", () => {
+        expect(countUniqueWord(wordlist)).toEqual({ hello: 3, maryam: 1, aha: 1 })
+    });
+    test("Sort words", () => {
+        expect(sortAlphabeticCountWord(wordcollection)).toEqual({ aha: 1, hello: 3, maryam: 1 })
     });
 });
