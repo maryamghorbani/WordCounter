@@ -11,56 +11,56 @@
 
 
 
-var fs = require('fs');
-//allows to work with the file system on your computer.
 
 
-try {
-    var data = fs.readFileSync('file.txt', 'utf8')
-
-} catch (err) {
-    console.error(err)
+function readFile(filePath) {
+    //allows to work with the file system on your computer.
+    try {
+        const fs = require('fs');
+        return fs.readFileSync(filePath, 'utf8');
+    } catch (err) {
+        console.error(err);
+        return '';
+    }
 }
 
-var text = data;
-function CountUniqueWords(txt) {
-    const Count = new Set(txt.toLowerCase().match(/\w+/g)).size;
-    return Count;
+function splitWords(content) {
+    return content.toLowerCase().match(/\w+/g).values();
 }
-
-
-console.log(CountUniqueWords(text))
 //A Set is a collection of unique values. Each value may occur only once in a Set.
 // \w find characters and + continue until find non-alphanumeric character
 
-
-function CountWord(text) {
-    var words = text.toLowerCase().match(/\w+/g).values();
-    var items = {};
+function countUniqueWord(listOfWord) {
     //define a dictionary
-    for (let item of words) {
-        if(isNaN(items[item])){
+    const items = {};
+    for (let item of listOfWord) {
+        if (isNaN(items[item])) {
             items[item] = 0;
         }
         items[item] += 1;
     }
-
-    // count unique words
-
-    function SortWords() {
-        items = Object.keys(items).sort().reduce((r, k) => (r[k] = items[k], r), {});
-        // sort words
-    }
-
-    for (const [key, value] of Object.entries(items)) {
-
-        console.log(key,value);
-    }
     return items
-
 }
 
-CountWord(text);
+function sortAlphabeticCountWord(collectionOfWord) {
+    return Object.keys(collectionOfWord).sort().reduce((r, k) => (r[k] = collectionOfWord[k], r), {});
+}
+
+function printWords(collectionOfWord) {
+    // sort words
+    console.log('total items: ' + Object.keys(collectionOfWord).length);
+    for (const [key, value] of Object.entries(collectionOfWord)) {
+
+        console.log(key, value);
+    }
+}
 
 
-module.exports = { CountUniqueWords , CountWord};
+const content = readFile('file.txt');
+const words = splitWords(content);
+let wordsCount = countUniqueWord(words);
+wordsCount = sortAlphabeticCountWord(wordsCount);
+printWords(wordsCount);
+
+
+
