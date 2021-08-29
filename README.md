@@ -14,3 +14,8 @@ That's it.
       to install necessary dependencies
 4. #### `node js-file`
 5. You can see outpun on your console
+
+#### ** Test the project:
+
+1. `npm install --save-dev jest`
+2. `npm test`
